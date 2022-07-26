@@ -1,0 +1,226 @@
+/* ======== ROOT START ========*/
+
+:root {
+    /* ======= GREEN THEME ======= --*/
+    --color-primary: #ff7b02;
+    --color-primary-variant: #e5a55d;
+    --color-bg-1: #000e17;
+    --color-bg-2: #001e2d;
+    --color-bg-3: #012734; /*Color Body BG*/
+    --color-bg-4: #003347;
+    --color-light: #85a2b2;
+    --color-white: hsl(0, 0%, 90%);
+
+    /* ======= PURPLE THEME ======= --*/
+    /*--color-primary: #ff7b02;
+    --color-primary-variant: #E5A55D;
+    --color-bg-1: #140021;
+    --color-bg-2: #1e0032;
+    --color-bg-3: #25003e;
+    --color-bg-4: #36005a;
+    --color-light: #d0b8e0;
+    --color-white: hsl(0, 0%, 90%); */
+
+    --container-width-lg: 88%;
+    --container-width-md: 92%;
+
+    --transition: all 400ms ease;
+}
+/* ======== ROOT END ======== */
+
+/* ======== SELECTION START ======== */
+
+::selection {
+    color: var(--color-bg-3);
+    background: var(--color-primary-variant);
+}
+/* ======== SELECTION END ======== */
+
+/* ======== SCROLLBAR START ======== */
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--color-white);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--color-light);
+}
+
+/* ======== SCROLLBAR END ======== */
+
+/* ============= GENERAL STYLES START =============*/
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--color-bg-3);
+    color: var(--color-light);
+}
+
+h1, h2 {
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--color-white);
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+a {
+    color: var(--color-light);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+
+.container {
+    width: var(--container-width-lg);
+    margin: 0 auto;
+    max-width: 2160px;
+}
+
+img {
+    width: 100%;
+}
+
+/* ============= GENERAL STYLES END ============= */
+
+
+/* ============= Navbar Start ============= */
+
+nav {
+    height: 5rem;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+/* Nav class on scroll using js */
+
+.window-scrolled {
+    background: var(--color-bg-2);
+    border-bottom: 0.2rem solid var(--color-bg-3);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.nav__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/* Only need on tablets and phones */
+.nav__toggle-btn {
+    display: none;
+}
+
+.nav__logo {
+    width: 15rem;
+}
+
+.nav__links {
+    display: flex;
+    gap: 4rem;
+}
+
+.nav__social {
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.nav__social a {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(var(--color-primary-variant), var(--color-primary));
+    color: var(--color-bg-4);
+    border-radius: 0.5rem;
+}
+
+.nav__social a:hover {
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+    background: linear-gradient(var(--color-bg-3), var(--color-bg-1));
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+/* ============= Navbar End ============= */
+
+/* ============= Header Start ============= */
+
+header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    background: linear-gradient(var(--color-bg-3), var(--color-bg-1));
+    overflow: hidden;
+}
+
+.header__container {
+    display: grid;
+    grid-template-columns: 40% 50%;
+    gap: 10%;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.header__image-bg {
+    background: var(--color-bg-4);
+    height: 22rem;
+    width: 16rem;
+    position: absolute;
+}
+
+.header__image-lg {
+    width: 29rem;
+    position: relative;
+    left: 1rem;
+    top: 1rem;
+    filter: saturate(0) brightness(0.3);
+}
+
+.header__image-sm {
+    width: 28rem;
+    height: 28rem;
+    overflow: hidden;
+    position: absolute;
+    left: 6rem;
+    top: 6rem;
+    transition: var(--transition);
+}
+
+.header__left:hover .header__image-sm {
+    opacity: 0;
+
+}
+
+.header__left:hover .header__image-lg {
+    filter: saturate(1) brightness(1);
+    border: 1rem solid var(--color-bg-3);
+    top: 0;
+    left: 0;
+
+}
+
+/* ============= Header End ============= */
+

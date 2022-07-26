@@ -58,15 +58,17 @@ body {
     font-family: "Montserrat", sans-serif;
     background: var(--color-bg-3);
     color: var(--color-light);
+    overflow-x: hidden;
 }
 
-h1, h2 {
+h1,
+h2 {
     line-height: 1.1;
     font-weight: 400;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     color: var(--color-white);
 }
 
@@ -83,7 +85,6 @@ a:hover {
     color: var(--color-primary);
 }
 
-
 .container {
     width: var(--container-width-lg);
     margin: 0 auto;
@@ -95,7 +96,6 @@ img {
 }
 
 /* ============= GENERAL STYLES END ============= */
-
 
 /* ============= Navbar Start ============= */
 
@@ -123,7 +123,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 /* Only need on tablets and phones */
@@ -143,7 +142,6 @@ nav {
 .nav__social {
     display: flex;
     gap: 1rem;
-    
 }
 
 .nav__social a {
@@ -151,7 +149,10 @@ nav {
     height: 1.8rem;
     display: grid;
     place-items: center;
-    background: linear-gradient(var(--color-primary-variant), var(--color-primary));
+    background: linear-gradient(
+        var(--color-primary-variant),
+        var(--color-primary)
+    );
     color: var(--color-bg-4);
     border-radius: 0.5rem;
 }
@@ -178,9 +179,10 @@ header {
 
 .header__container {
     display: grid;
-    grid-template-columns: 40% 50%;
-    gap: 10%;
-    margin-top: 10rem;
+    grid-template-columns: 43% 53%;
+    gap: 4%;
+    margin-top: 8rem;
+    /* margin-bottom: 5rem; */
     position: relative;
 }
 
@@ -211,16 +213,159 @@ header {
 
 .header__left:hover .header__image-sm {
     opacity: 0;
-
 }
 
 .header__left:hover .header__image-lg {
     filter: saturate(1) brightness(1);
-    border: 1rem solid var(--color-bg-3);
+    border: 1rem solid var(--color-bg-4);
     top: 0;
     left: 0;
+}
 
+.header__head {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.empty {
+    height: 3.5rem;
+    width: 18rem;
+    background: var(--color-bg-2);
+    border-radius: calc(3.5rem / 2);
+    margin-bottom: 3.5rem;
+    box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-bg-3);
+}
+
+.header__tag {
+    color: var(--color-primary-variant);
+}
+
+.header__right p {
+    margin-top: 2rem;
+    width: 85%;
+}
+
+/* Only need on tablets and phones */
+.header__btn-md {
+    display: none;
+}
+
+.fa-heart {
+    color: var(--color-primary-variant);
+}
+
+.header__frames {
+    position: absolute;
+    top: 88vh;
+    right: 45rem;
+    transition: var(--transition);
+}
+
+.header__frame {
+    width: 14rem;
+    border: 0.4rem solid var(--color-bg-3);
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
+    position: absolute;
+    transform: rotate(-10deg);
+    transform-origin: bottom left;
+    transition: var(--transition);
+}
+
+.header__frame:nth-child(1) {
+    transform: rotate(-10deg);
+    top: 1rem;
+    left: -5rem;
+}
+
+.header__frame:nth-child(2) {
+    transform: rotate(-10deg);
+    top: 1rem;
+    left: 3rem;
+}
+
+.header__frame:nth-child(3) {
+    transform: rotate(-10deg);
+    top: 1rem;
+    left: 11rem;
+}
+
+.header__frames:hover .header__frame {
+    transform: rotate(0deg);
+}
+
+
+.header__frames:hover .header__frame:nth-child(1) {
+    top: 0;
+    left: -5rem;
+}  
+
+.header__frames:hover .header__frame:nth-child(2) {
+    top: 0;
+    left: 10rem;
+}
+
+.header__frames:hover .header__frame:nth-child(3) {
+    top: 0;
+    left: 25rem;
 }
 
 /* ============= Header End ============= */
 
+/* BUTTON*/
+
+.contact__btn {
+    color: var(--color-bg-1);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+
+}
+
+.header__btn {
+    background: linear-gradient(-30deg, var(--color-primary-variant), var(--color-primary), var(--color-primary-variant));
+    position: absolute;
+    right: 6%;
+    bottom: -3rem;
+}
+
+.header__btn:hover {
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-1rem);
+    color: var(--color-bg-1);
+}
+
+.contact__btn i {
+    font-size: 3.5rem;
+    position: absolute;
+    transform: rotate(315deg);
+    
+}
+
+.contact__btn p {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    animation: spinText 30s linear infinite;
+    
+}
+
+.contact__btn p span {
+    position: absolute;
+    transform-origin: 0.3rem 5rem;
+}
+
+@keyframes spinText {
+    to {
+        transform: rotate(360deg);
+    }
+    
+}

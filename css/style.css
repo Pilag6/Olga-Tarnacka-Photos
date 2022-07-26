@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
 /* ======== ROOT START ========*/
 
 :root {
@@ -63,17 +65,19 @@ body {
 
 h1,
 h2 {
-    line-height: 1.1;
+    line-height: 1.5;
     font-weight: 400;
 }
 
 h1 {
     font-size: 3.8rem;
     color: var(--color-white);
+    font-family: 'Square Peg', cursive;
 }
 
 h2 {
     font-size: 3.5rem;
+    font-family: 'Square Peg', cursive;
 }
 
 a {
@@ -173,9 +177,17 @@ header {
     height: 100vh;
     position: relative;
     top: 0;
-    background: linear-gradient(var(--color-bg-3), var(--color-bg-1));
+    /* background: linear-gradient(var(--color-bg-3), var(--color-bg-1)); */
+    background-image: url(../1.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position:left;
+    background-size: cover;
     overflow: hidden;
+    
 }
+
+
 
 .header__container {
     display: grid;
@@ -206,7 +218,7 @@ header {
     height: 28rem;
     overflow: hidden;
     position: absolute;
-    left: 9rem;
+    left: 7rem;
     top: 6rem;
     transition: var(--transition);
     box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.2);
@@ -221,6 +233,15 @@ header {
     border: 1rem solid var(--color-bg-4);
     top: 0;
     left: 0;
+}
+
+.header__image-sign {
+    width: 12rem;
+    position: absolute;
+    top: 31rem;
+    left: 18rem;
+    filter: drop-shadow(20px 20px 1px #000);
+    transform: rotate(-8deg);
 }
 
 .header__head {
@@ -292,13 +313,13 @@ header {
 .header__frames {
     position: absolute;
     top: 95vh;
-    right: 45rem;
+    right: 47rem;
     transition: var(--transition);
 }
 
 .header__frame {
-    width: 14rem;
-    border: 0.4rem solid var(--color-bg-3);
+    width: 16rem;
+    border: 0.2rem solid var(--color-white);
     box-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
     position: absolute;
     transform: rotate(-10deg);
@@ -335,12 +356,12 @@ header {
 
 .header__frames:hover .header__frame:nth-child(2) {
     top: 0;
-    left: 10rem;
+    left: 12rem;
 }
 
 .header__frames:hover .header__frame:nth-child(3) {
     top: 0;
-    left: 25rem;
+    left: 29rem;
 }
 
 /* BUTTON*/
@@ -418,7 +439,8 @@ header {
 
 .about__title {
     position: absolute;
-    top: -7rem;
+    top: -4rem;
+    left: 8rem;
     z-index: 1;
 }
 
@@ -496,5 +518,9 @@ header {
         margin-top: 15rem;
         /* grid-template-columns: 45% 51%;
         gap: 1%; */
+    }
+
+    .header__image-sign {
+        top: 32rem;
     }
 }

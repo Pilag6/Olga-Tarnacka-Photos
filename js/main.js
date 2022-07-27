@@ -73,3 +73,12 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 swiper.autoplay.start();
+
+// ART
+
+$(document).ready(function(){
+    $('.art__thumb a').click(function(e){
+        e.preventDefault();
+        $('.art__grid-big-img img').attr("src", $(this).attr("href"))
+    })
+})

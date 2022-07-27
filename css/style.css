@@ -576,7 +576,7 @@ header {
 
 /* ============= Gallery Start ============= */
 
-#gallery {
+#gallery, #children {
     margin-top: 8rem;
 }
 
@@ -596,7 +596,7 @@ header {
 
 .swiper-wrapper {
     margin-top: 3rem;
-    margin-bottom: 12rem;
+    margin-bottom: 10rem;
     height: 25rem;
 }
 
@@ -605,7 +605,7 @@ header {
 }
 
 .swiper-slide img {
-    height: 33rem;
+    height: 30rem;
     border: 0.7rem solid var(--color-white);
     /* border-bottom: 5rem solid var(--color-white); */
     cursor:grab;
@@ -620,6 +620,14 @@ header {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
 }
 
+.img-right-top{
+    object-position: -18rem top;
+}
+
+.img-left-top{
+    object-position: 16rem top;
+}
+
 .swiper-pagination-bullet {
     background: var(--color-primary);
 }
@@ -627,6 +635,102 @@ header {
 
 
 /* ============= Gallery End ============= */
+
+
+/* ============= START CHILDREN ============= */
+
+.children__container {
+    position: relative;
+}
+.children__head {
+    display: flex;
+    justify-content: start;
+    margin-left: 8rem;
+    gap: 15rem;
+}
+
+.children__p {
+    width: 45rem;
+    margin-left: 8rem;
+    margin-top: 2rem;
+}
+
+.children__btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 2rem;
+}
+
+/* GRID */
+
+.children__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 350px;
+    padding: 40px 20px 60px;
+    gap: 10px;    
+}
+
+.children__item {
+    overflow: hidden;
+    border: 0.4rem solid var(--color-bg-4);
+
+}
+
+.children__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .8s;
+    
+}
+
+.children__img:hover {
+    transform: scale(1.3);
+    opacity: .8;
+}
+
+.children__item:nth-child(1) {
+    grid-column-start: span 2;
+
+}
+
+.children__item:nth-child(2) {
+    grid-row-start: span 2;
+
+}
+
+.children__item:nth-child(9) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+
+}
+
+.children__item:nth-child(8) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 5;
+
+}
+
+.children__item:nth-child(14) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 5;
+
+}
+
+.children__item:nth-child(16) {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 7;
+
+}
+
+/* END CHILDREN */
 
 /* ============ Medias Queries ============== */
 
@@ -639,5 +743,15 @@ header {
 
     .header__image-sign {
         top: 32rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .children__grid {
+        display: block;
+    }
+
+    .children__img {
+        margin-bottom: 20px;
     }
 }

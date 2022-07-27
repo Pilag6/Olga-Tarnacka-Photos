@@ -1,6 +1,6 @@
 // Right Clik Desactivado
 
-document.oncontextmenu = function(){return false}
+// document.oncontextmenu = function(){return false}
 
 // Change Nav Style on Scroll
 

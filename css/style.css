@@ -578,18 +578,20 @@ header {
 
 #gallery {
     margin-top: 8rem;
-    
 }
 
 .gallery__head {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-left: 8rem;
+    gap: 15rem;
 }
+
 
 .gallery__container p {
     width: 45rem;
     margin-left: 8rem;
+    margin-top: 2rem;
 }
 
 .swiper-wrapper {
@@ -606,7 +608,7 @@ header {
     height: 33rem;
     border: 0.7rem solid var(--color-white);
     /* border-bottom: 5rem solid var(--color-white); */
-    cursor: grab;
+    cursor:grab;
     transition: var(--transition);
     /* filter:saturate(0); */
     user-select: none;

@@ -34,9 +34,9 @@ var swiper = new Swiper(".mySwiper", {
         onlyInViewport: false,
     },
 
-    mousewheel: {
-    invert: true,
-  },
+//     mousewheel: {
+//     invert: true,
+//   },
 
     slidesPerView: 1,
     spaceBetween: 20,
@@ -44,10 +44,6 @@ var swiper = new Swiper(".mySwiper", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
     },
     breakpoints: {
         599: {

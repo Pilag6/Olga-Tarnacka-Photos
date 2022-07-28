@@ -798,6 +798,12 @@ header {
     transform: scale(1.1);
 }
 
+.swiper__art,
+.swiper__children,
+.swiper__wedding {
+    display: none;
+}
+
 /* END ART */
 
 
@@ -874,6 +880,21 @@ header {
 
     
 /* for Large Devices*/
+
+@media screen and (max-width: 1475px) {
+    .swiper__art {
+        display: flex;
+    }
+
+    .swiper-pagination-art {
+        display: none;
+    }
+
+    .hidden-in-sd {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1420px) {
     .header__container {
         grid-template-columns: 35% 60%;
@@ -1058,7 +1079,6 @@ header {
         margin-left: 2rem;
     }
 
-
 }
 
 @media screen and (max-width: 890px) {
@@ -1078,6 +1098,17 @@ header {
 
 /* for Phones*/
 @media screen and (max-width: 600px) {
+    .swiper__children,
+    .swiper__wedding {
+        display: flex;
+    }
+
+    .hidden-in-sd-kids,
+    .hidden-in-sd-wedding {
+        display: none;
+    }
+    
+    
     h1, h2 {
         /* font-size: 2.4rem; */
         line-height: 1.3;
@@ -1183,31 +1214,3 @@ header {
         top: 32rem;
     }
 }
-
-
-/* No lo voy a usar al final porque voy a crear slides*/
-
-@media (max-width: 768px) {
-    .children__grid,
-    .wedding__grid {
-        display: block;
-    }
-
-    .children__img,
-    .wedding__img {
-        margin-bottom: 20px;
-        transform: scale(1.3);
-        
-    }
-
-    .children__item, 
-    .wedding__item {
-        margin-bottom: 1rem;
-    }
-    
-}
-
-
-/* .hidden {
-    display: none;
-} */

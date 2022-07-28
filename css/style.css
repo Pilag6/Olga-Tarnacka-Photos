@@ -1046,7 +1046,7 @@ header {
     .family__head {
         margin-left: 2rem;
         gap: 10rem;
-        width: 95%;
+        width: 100%;
     }
     
     .gallery__p,
@@ -1081,11 +1081,9 @@ header {
     h1, h2 {
         /* font-size: 2.4rem; */
         line-height: 1.3;
-        color: var(--color-white);
     }
 
     header {
-        padding-top: 4rem;
         padding-bottom: 6rem;
     }
 
@@ -1093,7 +1091,7 @@ header {
         grid-template-columns: 1fr;
         gap: 1rem;
         text-align: center;
-        height: 100vh;
+        height: fit-content;
     }
 
     .header__empty {
@@ -1110,6 +1108,64 @@ header {
         margin: 2rem auto;
         color: var(--color-white);
     }
+
+    .header_contact-me {
+        display: none;
+    }
+    
+
+    /* ===== ABOUT =====*/
+
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about__right p {
+        width: 90%;
+        margin: 1rem auto;
+        text-align: center;
+        color: var(--color-white);
+    }
+
+    .about__empty{
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .about__image-lg {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* ===== GALLERIES =====*/
+
+    .gallery__head, 
+    .children__head,
+    .art__head,
+    .wedding__head,
+    .family__head {
+        color: var(--color-white);
+    }
+
+    .gallery__empty,
+    .children__empty,
+    .art__empty,
+    .wedding__empty, 
+    .family__empty {
+        display: none;
+    }
+
+    .gallery__p,
+    .children__p,
+    .art__p,
+    .wedding__p,
+    .family__p {
+        width: 90%;
+        text-align: center;
+        color: var(--color-white);
+    }
+
 }
 
 

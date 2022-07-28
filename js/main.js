@@ -34,9 +34,14 @@ var swiper = new Swiper(".mySwiper", {
         onlyInViewport: false,
     },
 
-//     mousewheel: {
-//     invert: true,
-//   },
+// mousewheel: {
+// invert: true,
+// },
+
+    autoplay: {
+        disableOnInteraction: false,
+        delay: 1500,
+    },
 
     slidesPerView: 1,
     spaceBetween: 20,

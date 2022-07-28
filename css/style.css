@@ -101,6 +101,31 @@ img {
     width: 100%;
 }
 
+#gallery, #children, #art, #wedding {
+    margin-top: 8rem;
+}
+
+.gallery__head, 
+.children__head,
+.art__head,
+.wedding__head,
+.family__head {
+    display: flex;
+    justify-content: start;
+    margin-left: 8rem;
+    gap: 15rem;
+}
+
+.gallery__p,
+.children__p,
+.art__p,
+.wedding__p,
+.family__p {
+    width: 45rem;
+    margin-left: 8rem;
+    margin-top: 2rem;
+}
+
 /* ============= GENERAL STYLES END ============= */
 
 /* ============= Navbar Start ============= */
@@ -576,24 +601,6 @@ header {
 
 /* ============= Gallery Start ============= */
 
-#gallery, #children, #art {
-    margin-top: 8rem;
-}
-
-.gallery__head {
-    display: flex;
-    justify-content: start;
-    margin-left: 8rem;
-    gap: 15rem;
-}
-
-
-.gallery__container p {
-    width: 45rem;
-    margin-left: 8rem;
-    margin-top: 2rem;
-}
-
 .swiper-wrapper {
     margin-top: 3rem;
     margin-bottom: 10rem;
@@ -642,18 +649,6 @@ header {
 .children__container {
     position: relative;
 }
-.children__head {
-    display: flex;
-    justify-content: start;
-    margin-left: 8rem;
-    gap: 15rem;
-}
-
-.children__p {
-    width: 45rem;
-    margin-left: 8rem;
-    margin-top: 2rem;
-}
 
 .children__btn {
     position: absolute;
@@ -668,7 +663,7 @@ header {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 350px;
     padding: 40px 20px 60px;
-    gap: 10px;    
+    gap: 10px;
 }
 
 .children__item {
@@ -682,6 +677,7 @@ header {
     height: 100%;
     object-fit: cover;
     transition: all .8s;
+    
 }
 
 .children__img:hover {
@@ -734,24 +730,29 @@ header {
 
 
 /* START ART */
+#art {
+    background: var(--color-primary-variant);
+}
 
 .art__container {
-    margin-bottom: 8rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
 }
 
 .art__head {
-    display: flex;
-    justify-content: start;
     flex-wrap: wrap;
-    margin-left: 8rem;
-    gap: 15rem;
+    color: var(--color-bg-4);
+}
+
+.art__empty {
+    background: var(--color-primary-variant);
+    box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-primary-variant);
 }
 
 .art__p {
-    width: 45rem;
-    margin-left: 8rem;
-    margin-top: 2rem;
     margin-bottom: 2rem;
+    color: var(--color-bg-4);
 }
 
 .art__grid {
@@ -806,6 +807,78 @@ header {
 /* END ART */
 
 
+/* GRID */
+
+.wedding__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 350px;
+    padding: 40px 20px 60px;
+    gap: 10px;
+}
+
+.wedding__item {
+    overflow: hidden;
+    border: 0.4rem solid var(--color-primary-variant);
+
+}
+
+.wedding__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .8s;
+    
+}
+
+.wedding__img:hover {
+    transform: scale(1.3);
+    opacity: .8;
+}
+
+.wedding__item:nth-child(10) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.wedding__item:nth-child(3) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
+}
+
+.wedding__item:nth-child(9) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.wedding__item:nth-child(8) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.wedding__item:nth-child(13) {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.wedding__item:nth-child(13) img {
+    object-position: center -10rem;
+}
+
+
+
+
 /* ============ Medias Queries ============== */
 
 @media only screen and (min-width: 1920px) {
@@ -820,12 +893,30 @@ header {
     }
 }
 
+
+/* No lo voy a usar al final porque voy a crear slides*/
+
 @media (max-width: 768px) {
-    .children__grid {
+    .children__grid,
+    .wedding__grid {
         display: block;
     }
 
-    .children__img {
+    .children__img,
+    .wedding__img {
         margin-bottom: 20px;
+        transform: scale(1.3);
+        
     }
+
+    .children__item, 
+    .wedding__item {
+        margin-bottom: 1rem;
+    }
+    
 }
+
+
+/* .hidden {
+    display: none;
+} */

@@ -1,3 +1,5 @@
+
+
 // Right Clik Desactivado
 
 // document.oncontextmenu = function(){return false}
@@ -37,6 +39,58 @@ if(document.body.clientWidth < 1024) {
     navLink.addEventListener('click', closeNav);
 })
 }
+
+//WhatsApp
+
+function isMobile() {
+    if (sessionStorage.desktop)
+        return false;
+    else if (localStorage.mobile)
+        return true;
+    var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
+    for (var i in mobile)
+        if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
+    return false;
+}
+
+const formulario = document.querySelector('#formulario');
+const buttonSubmit = document.querySelector('#submit');
+const urlDesktop = 'https://web.whatsapp.com/';
+const urlMobile = 'whatsapp://';
+const telefono = '34603431876';
+
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault()
+    buttonSubmit.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>'
+    buttonSubmit.disabled = true
+    setTimeout(() => {
+        let nombre = document.querySelector('#nombre').value
+        let email = document.querySelector('#email').value
+        let msn = document.querySelector('#msn').value
+        let mensaje = 'send?phone=' + telefono + '&text=*_Contact Form Ola_*%0A*Your Name*%0A' + nombre + '%0A*Your E-Mail*%0A' + email + '%0A*Tu mensaje*%0A' + msn + ''
+        if(isMobile()) {
+            window.open(urlMobile + mensaje, '_blank')
+        }else{
+            window.open(urlDesktop + mensaje, '_blank')
+        }
+        buttonSubmit.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar WhatsApp'
+        buttonSubmit.disabled = false
+    }, 3000);
+});
+
+
+
+// ART
+
+$(document).ready(function(){
+    $('.art__thumb a').click(function(e){
+        e.preventDefault();
+        $('.art__grid-big-img img').attr("src", $(this).attr("href"))
+    })
+})
+
+
+
 
 // Contact buttons (circular text buttons)
 
@@ -107,51 +161,6 @@ var swiper = new Swiper(".mySwiper", {
 
 swiper.autoplay.start();
 
-// ART
-
-$(document).ready(function(){
-    $('.art__thumb a').click(function(e){
-        e.preventDefault();
-        $('.art__grid-big-img img').attr("src", $(this).attr("href"))
-    })
-})
 
 
 
-//WhatsApp
-
-function isMobile() {
-    if (sessionStorage.desktop)
-        return false;
-    else if (localStorage.mobile)
-        return true;
-    var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
-    for (var i in mobile)
-        if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
-    return false;
-}
-
-const formulario = document.querySelector('#formulario');
-const buttonSubmit = document.querySelector('#submit');
-const urlDesktop = 'https://web.whatsapp.com/';
-const urlMobile = 'whatsapp://';
-const telefono = '34603431876';
-
-formulario.addEventListener('submit', (event) => {
-    event.preventDefault()
-    buttonSubmit.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>'
-    buttonSubmit.disabled = true
-    setTimeout(() => {
-        let nombre = document.querySelector('#name').value
-        let email = document.querySelector('#email').value
-        let msn = document.querySelector('#msn').value
-        let mensaje = 'send?phone=' + telefono + '&text=*_Contact Form Ola_*%0A*Your Name*%0A' + nombre + '%0A*Your Email*%0A' + email + '%0A*Your Message*%0A' + msn + ''
-        if(isMobile()) {
-            window.open(urlMobile + mensaje, '_blank')
-        }else{
-            window.open(urlDesktop + mensaje, '_blank')
-        }
-        buttonSubmit.innerHTML = '<i class="fab fa-whatsapp"></i> Send WhatsApp'
-        buttonSubmit.disabled = false
-    }, 3000);
-});

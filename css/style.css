@@ -50,7 +50,13 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: var(--color-light);
+    background: linear-gradient(
+        var(--color-primary-variant),
+        var(--color-primary)
+    );
+    width: 100%;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 /* ======== SCROLLBAR END ======== */
@@ -140,6 +146,8 @@ nav {
     left: 0;
     z-index: 99;
 }
+
+
 
 /* ===== Nav class on scroll using js ===== */
 
@@ -876,6 +884,183 @@ header {
 
 
 
+
+
+/* === FORMULARIO CONTACTO === */
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 0 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color-bg-4);
+    background-size: cover;
+}
+
+.contact .content {
+    width: 75%;
+    height: auto;
+    text-align: center;
+    padding: 1.2rem 0 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact .content h2 {
+    margin: 1.8rem;
+    color: var(--color-white);
+}
+
+.contact .content p {
+    font-weight: 300;
+    color: var(--color-white);
+    font-size: 1.2rem;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 1.8rem;
+    padding: 0 0.6rem;
+}
+
+.form-container .contactInfo {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container .contactInfo .box {
+    position: relative;
+    padding: 1.2rem 0;
+    display: flex;
+
+}
+
+.form-container .contactInfo .box .icon {
+    min-width: 3.1rem;
+    height: 3.1rem;
+    background: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.3rem;
+}
+
+.form-container .contactInfo .box .text {
+    display: flex;
+    margin-left: 1.2rem;
+    font-size: 1rem;
+    color: var(--color-white);
+    flex-direction: column;
+}
+
+.form-container .contactInfo .box .text h3 {
+    color: var(--color-white);
+    font-weight: 900;
+}
+
+.contactForm {
+    width: 50%;
+    padding: 1.5rem 2.5rem;
+    background: var(--color-white);
+    box-shadow: 1rem 1rem 0.5rem rgba(0, 0, 0, 0.4);
+
+}
+
+.contactForm h2 {
+    font-size: 2.5rem;
+    color: var(--color-bg-2);
+    font-weight: 800;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 0.6rem;
+
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 0.4rem 0.3rem;
+    font-size: 1rem;
+    margin: 0.6rem 0;
+    border: none;
+    border-bottom: 2px solid var(--color-bg-4);
+    outline: none;
+    resize: none;
+}
+
+.inputBox textarea {
+    height: 10rem;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 0.3rem 0;
+    font-size: 1rem;
+    margin: 0.2rem 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: var(--color-bg-4);
+}
+
+.contactForm .inputBox input:focus~span,
+.contactForm .inputBox input:valid~span,
+.contactForm .inputBox textarea:focus~span,
+.contactForm .inputBox textarea:valid~span {
+    color: var(--color-bg-2);
+    font-size: 0.75rem;
+    transform: translateY(-20px);
+
+}
+
+.contactForm .inputBox input[type="submit"] {
+    width: 6.25rem;
+    background: var(--color-bg-1);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    border-radius: 0.6rem;
+}
+
+.boton {
+    display: block;
+    width: 50%;
+    height: 3.1rem;
+    background-color: #2F855A;
+    border: solid 2px var(--color-white);
+    color: var(--color-white);
+    border-radius: 0.3rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+
+.boton:hover {
+    background-color: #48bb78;
+    border: solid 2px #48bb78;
+    transition: .5s;
+}
+
+/* FIN FORM */
+
+
+
 /* ============ Medias Queries ============== */
 
     
@@ -1155,6 +1340,10 @@ header {
         color: var(--color-white);
     }
 
+    .header_visit {
+        margin: 0;
+    }
+    
     .header_contact-me {
         display: none;
     }

@@ -884,10 +884,15 @@ header {
 @media screen and (max-width: 1475px) {
     .swiper__art {
         display: flex;
+        margin-bottom: 8rem;
     }
 
     .swiper-pagination-art {
-        display: none;
+        justify-content: center;
+    }
+
+    .swiper-pagination-art .swiper-pagination-bullet {
+        background: var(--color-bg-4);
     }
 
     .hidden-in-sd {
@@ -1076,7 +1081,8 @@ header {
     .wedding__p,
     .family__p {
         width: 95%;
-        margin-left: 2rem;
+        margin: 0 auto;
+        margin-top: 2rem;
     }
 
 }
@@ -1101,6 +1107,15 @@ header {
     .swiper__children,
     .swiper__wedding {
         display: flex;
+    }
+
+    .swiper-pagination-wedding, 
+    .swiper-pagination-kids {
+        justify-content: center;
+    }
+
+    .swiper-pagination-wedding .swiper-pagination-bullet {
+        background: var(--color-light);
     }
 
     .hidden-in-sd-kids,

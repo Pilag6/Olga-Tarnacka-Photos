@@ -867,59 +867,39 @@ header {
     grid-row-end: 8;
 }
 
-/* .wedding__item:nth-child(13) img {
-    object-position: center -10rem;
-} */
-
 
 
 
 /* ============ Medias Queries ============== */
-    
-/* for Tablets*/
 
+    
+/* for Large Devices*/
 @media screen and (max-width: 1420px) {
     .header__container {
         grid-template-columns: 35% 60%;
         gap: 2%;
     }
-
-    .header__right p {
-        width: 95%;
-    }
     
+    .header__right p {width: 95%;}
 }
 
 @media screen and (max-width: 1255px) {
-    h1 {
-        font-size: 3.1rem;
-    }
+    h1 {font-size: 3.1rem;}
 }
 
+/* for Tablets*/
 @media screen and (max-width: 1030px) {
-    
-    /* body {
-        background: red;
-    }    
-     */
     .container {
         width: var(--container-width-md);
         position: relative;
         }
     
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    h2 {
-        font-size: 2.8rem;
-    }
+    h1 {font-size: 2.8rem;}
+    h2 {font-size: 2.8rem;}
 
     /* ======= NAVBAR ======= */
 
-    .nav__social {
-        display: none;
-    }
+    .nav__social {display: none;}
 
     .nav__links {
         position: absolute;
@@ -939,15 +919,9 @@ header {
         transform-origin: top;
     }
 
-    .nav__links li:nth-child(2) {
-        animation-delay: 200ms;
-    }
-    .nav__links li:nth-child(3) {
-        animation-delay: 400ms;
-    }
-    .nav__links li:nth-child(4) {
-        animation-delay: 600ms;
-    }
+    .nav__links li:nth-child(2) {animation-delay: 200ms;}
+    .nav__links li:nth-child(3) {animation-delay: 400ms;}
+    .nav__links li:nth-child(4) {animation-delay: 600ms;}
 
     @keyframes navAnimation { 
         to {
@@ -977,13 +951,9 @@ header {
         border-width: 0;
     }
 
-    #nav__toggle-close {
-        display: none;
-    }
+    #nav__toggle-close {display: none;}
 
-    .nav__container {
-        justify-content: space-between;
-    }
+    .nav__container {justify-content: space-between;}
 
     /* ======= HEADER ======= */
 
@@ -992,7 +962,6 @@ header {
         padding: 8rem 0 12rem;
         display: grid;
         place-items: center;
-        
     }
 
     /* Achicar el Gri-template-columns a partir de 796*/
@@ -1017,49 +986,18 @@ header {
         height: auto;
     }
     
-    .header__frame:nth-child(1) {
-        left: -9rem;
-    }
+    .header__frame:nth-child(1) {left: -9rem;}
+    .header__frame:nth-child(2) {left: calc(-9rem + 6rem);}
+    .header__frame:nth-child(3) {left: calc(-9rem + (6rem * 2));}
+    .header__frame:nth-child(4) {left: calc(-9rem + (6rem * 3));}
+    .header__frame:nth-child(5) {left: calc(-9rem + (6rem * 4));}
     
-    .header__frame:nth-child(2) {
-        left: calc(-9rem + 6rem);
-    }
-    
-    .header__frame:nth-child(3) {
-        left: calc(-9rem + (6rem * 2));
-    }
-    
-    .header__frame:nth-child(4) {
-        left: calc(-9rem + (6rem * 3));
-    }
-    
-    .header__frame:nth-child(5) {
-        left: calc(-9rem + (6rem * 4));
-    }
-    
-    .header__frames:hover .header__frame {
-        transform: rotate(-10deg);
-    }
-    
-    .header__frames:hover .header__frame:nth-child(1) {
-        left: -9rem;
-    }
-    
-    .header__frames:hover .header__frame:nth-child(2) {
-        left: calc(-9rem + 6rem);
-    }
-    
-    .header__frames:hover .header__frame:nth-child(3) {
-        left: calc(-9rem + 12rem);
-    }
-    
-    .header__frames:hover .header__frame:nth-child(4) {
-        left: calc(-9rem + 18rem);
-    }
-    
-    .header__frames:hover .header__frame:nth-child(5) {
-        left: calc(-9rem + 24rem);
-    }
+    .header__frames:hover .header__frame {transform: rotate(-10deg);}
+    .header__frames:hover .header__frame:nth-child(1) {left: -9rem;}
+    .header__frames:hover .header__frame:nth-child(2) {left: calc(-9rem + 6rem);}
+    .header__frames:hover .header__frame:nth-child(3) {left: calc(-9rem + 12rem);}
+    .header__frames:hover .header__frame:nth-child(4) {left: calc(-9rem + 18rem);}
+    .header__frames:hover .header__frame:nth-child(5) {left: calc(-9rem + 24rem);}
 
     /* ======= ABOUT ======= */
     
@@ -1068,8 +1006,13 @@ header {
     }
 
     .about__container {
-        grid-template-columns: 35% 52%;
-        gap: 6%;
+        grid-template-columns: 35% 60%;
+        gap: 3%;
+    }
+
+    .about__title {
+        top: -3rem;
+        left: 1rem;
     }
 
     .about__image-bg, .about__image-sm {
@@ -1077,7 +1020,7 @@ header {
     }
 
     .about__image-lg {
-        left: 5rem;
+        left: 0rem;
         top: 0;
         filter: saturate(1) brightness(1);
     }
@@ -1086,22 +1029,91 @@ header {
         display: none;
     }
 
-    .about__right p {
-        margin: 0 0 1rem 0;
+    .about__right {
+        margin: 0;
     }
+
+    .about__right p {
+        margin-bottom: 0.5rem;
+    }
+
+    /* ======= GALLERIES ======= */
+    
+    .gallery__head, 
+    .children__head,
+    .art__head,
+    .wedding__head,
+    .family__head {
+        margin-left: 2rem;
+        gap: 10rem;
+        width: 95%;
+    }
+    
+    .gallery__p,
+    .children__p,
+    .art__p,
+    .wedding__p,
+    .family__p {
+        width: 95%;
+        margin-left: 2rem;
+    }
+
+
 }
 
 @media screen and (max-width: 890px) {
-    .header__frame {
+    .header__frame {display: none;}
+
+    h1 {font-size: 2.6rem;}
+
+    .gallery__empty,
+    .children__empty,
+    .art__empty,
+    .wedding__empty, 
+    .family__empty {
+        width: 12rem;
+    }
+
+}
+
+/* for Phones*/
+@media screen and (max-width: 600px) {
+    h1, h2 {
+        /* font-size: 2.4rem; */
+        line-height: 1.3;
+        color: var(--color-white);
+    }
+
+    header {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+    }
+
+    .header__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+        height: 100vh;
+    }
+
+    .header__empty {
         display: none;
     }
 
-    h1 {
-        font-size: 2.6rem;
+    .header__tag {
+        margin: 0 auto;
+        margin-bottom: 2rem;
     }
 
-
+    .header__right p {
+        width: 85%;
+        margin: 2rem auto;
+        color: var(--color-white);
+    }
 }
+
+
+
 
 
 @media only screen and (min-width: 1920px) {

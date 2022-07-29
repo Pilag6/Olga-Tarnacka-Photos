@@ -1,7 +1,10 @@
-/* ======== ROOT START ========*/
+
+/* ======================= ROOT START =======================*/
 
 :root {
+
     /* ======= GREEN THEME ======= --*/
+
     --color-primary: #ff7b02;
     --color-primary-variant: #e5a55d;
     --color-bg-1: #000e17;
@@ -25,43 +28,38 @@
     --container-width-lg: 88%;
     --container-width-md: 92%;
 
+    --box-shadow-1: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    --box-shadow-2: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    --box-shadow-3: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+
     --transition: all 400ms ease;
 }
 
-/* ======== ROOT END ======== */
+/* ======================== ROOT END ======================= */
 
-/* ======== SELECTION START ======== */
+
+/* ======================= SELECTION & SCOLLBAR START ======================= */
 
 ::selection {
     color: var(--color-bg-3);
     background: var(--color-primary-variant);
 }
 
-/* ======== SELECTION END ======== */
+html::-webkit-scrollbar {width: 1rem;}
 
-/* ======== SCROLLBAR START ======== */
-
-html::-webkit-scrollbar {
-    width: 1rem;
-}
-
-html::-webkit-scrollbar-track {
-    background: var(--color-white);
-}
+html::-webkit-scrollbar-track {background: var(--color-white);}
 
 html::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        var(--color-primary-variant),
-        var(--color-primary)
-    );
+    background: linear-gradient(var(--color-primary-variant),var(--color-primary));
     width: 100%;
     border-radius: 0.4rem;
     box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
-/* ======== SCROLLBAR END ======== */
+/* ======================= SELECTION & SCROLLBAR END ======================= */
 
-/* ============= GENERAL STYLES START =============*/
+
+/* ======================= GENERAL STYLES START =======================*/
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -69,22 +67,19 @@ body {
     color: var(--color-light);
 }
 
-h1,
-h2 {
+h1, h2 {
     line-height: 1.5;
     font-weight: 400;
+    font-family: "Square Peg", cursive;
 }
 
 h1 {
-    font-family: "Square Peg", cursive;
     font-size: 3.8rem;
-    /* font-weight: bold; */
     color: var(--color-white);
 }
 
 h2 {
     font-size: 3.5rem;
-    font-family: "Square Peg", cursive;
 }
 
 a {
@@ -107,7 +102,7 @@ img {
     width: 100%;
 }
 
-#gallery, #children, #art, #wedding {
+#gallery, #children, #art, #wedding, #animals, #landscape {
     margin-top: 8rem;
 }
 
@@ -115,7 +110,9 @@ img {
 .children__head,
 .art__head,
 .wedding__head,
-.family__head {
+.family__head,
+.animals__head,
+.landscape__head {
     display: flex;
     justify-content: start;
     margin-left: 8rem;
@@ -126,28 +123,30 @@ img {
 .children__p,
 .art__p,
 .wedding__p,
-.family__p {
+.family__p,
+.animals__p,
+.landscape__p {
     width: 45rem;
     margin-left: 8rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-#wedding, #art, #children, #gallery, #family {
+#wedding, #art, #children, #gallery, #family, #animals, #landscape {
     padding-bottom: 4rem;
 }
 
-.art__container, 
-.wedding__container, 
-.children__container,
-.family__container {
-    padding-top: 4rem;
+.swiper__art,
+.swiper__children,
+.swiper__wedding {
+    display: none;
 }
 
+/* ======================= GENERAL STYLES END ======================= */
 
 
-/* ============= GENERAL STYLES END ============= */
 
-/* ============= Navbar Start ============= */
+/* ======================= NAVBAR START ======================= */
 
 nav {
     width: 100vw;
@@ -160,14 +159,11 @@ nav {
     z-index: 99;
 }
 
-
-
 /* ===== Nav class on scroll using js ===== */
-
 .window-scrolled {
     background: var(--color-bg-2);
     border-bottom: 0.2rem solid var(--color-bg-3);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    box-shadow: var(--box-shadow-3);
 }
 /* ===== Nav class on scroll using js ===== */
 
@@ -179,9 +175,7 @@ nav {
 }
 
 /* ===== Only need on tablets and phones ===== */
-.nav__toggle-btn {
-    display: none;
-}
+.nav__toggle-btn {display: none;}
 /* ===== Only need on tablets and phones ===== */
 
 .nav__logo {
@@ -192,9 +186,11 @@ nav {
     display: flex;
     gap: 4rem;
 }
+
 .nav__links a:hover {
     border-top: 0.2rem solid var(--color-primary);
 }
+
 .nav__social {
     display: flex;
     gap: 1rem;
@@ -205,24 +201,46 @@ nav {
     height: 1.8rem;
     display: grid;
     place-items: center;
-    background: linear-gradient(
-        var(--color-primary-variant),
-        var(--color-primary)
-    );
+    background: linear-gradient(var(--color-primary-variant),var(--color-primary));
     color: var(--color-bg-4);
     border-radius: 0.5rem;
 }
 
 .nav__social a:hover {
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow-3);
     background: linear-gradient(var(--color-bg-3), var(--color-bg-1));
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
 }
 
-/* ============= Navbar End ============= */
 
-/* ============= Header Start ============= */
+/* ===== SUBMENU ===== */
+.nav__links li ul {
+    display: none;
+    position: absolute;
+    min-width: 10rem;
+    height: auto;
+    padding: 1rem 0 0 0;
+    background: var(--color-bg-2);
+    box-shadow: var(--box-shadow-3);
+    
+}
+.nav__links li:hover > ul {display: block;}
+
+.nav__links li ul li {
+    padding: 1rem 0 1rem 1rem;
+    border-bottom: 0.2rem solid var(--color-bg-4);
+}
+
+.nav__links li ul li:hover {
+    background: var(--color-bg-4);
+    box-shadow: inset 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+/* ======================= NAVBAR END ======================= */
+
+
+/* ======================= HEADER START ======================= */
 
 header {
     max-width: 100vw;
@@ -245,53 +263,6 @@ header {
     margin-top: 8rem;
     position: relative;
 }
-
-/* .header__image-bg {
-    background: var(--color-bg-4);
-    height: 22rem;
-    width: 16rem;
-    position: absolute;
-}
-
-.header__image-lg {
-    width: 32rem;
-    position: relative;
-    left: 1rem;
-    top: 1rem;
-    filter: saturate(0) brightness(0.3);
-    transition: 500ms ease;
-}
-
-.header__image-sm {
-    width: 28rem;
-    height: 28rem;
-    overflow: hidden;
-    position: absolute;
-    left: 7rem;
-    top: 6rem;
-    transition: var(--transition);
-    box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.header__left:hover .header__image-sm {
-    opacity: 0;
-}
-
-.header__left:hover .header__image-lg {
-    filter: saturate(1) brightness(1);
-    border: 1rem solid var(--color-bg-4);
-    top: 0;
-    left: 0;
-}
-
-.header__image-sign {
-    width: 12rem;
-    position: absolute;
-    top: 31rem;
-    left: 18rem;
-    filter: drop-shadow(20px 20px 1px #000);
-    transform: rotate(-8deg);
-} */
 
 .header__head {
     display: flex;
@@ -324,12 +295,7 @@ header {
 .header_contact-me:hover {
     color: var(--color-bg-1);
     font-weight: 500;
-    background: linear-gradient(
-        -30deg,
-        var(--color-primary-variant),
-        var(--color-primary),
-        var(--color-primary-variant)
-    );
+    background: linear-gradient(-30deg, var(--color-primary-variant), var(--color-primary),var(--color-primary-variant));
     box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.2);
     padding: 1rem;
     margin-right: 2rem;
@@ -340,8 +306,8 @@ header {
 .header_visit:hover,
 .header_contact-me {
     color: var(--color-light);
-    font-weight: 500;
     background: var(--color-bg-4);
+    font-weight: 500;
     padding: 1rem;
     box-shadow: 0 0.5rem 0.5rem rgba(255, 255, 255, 0.1);
     border-radius: calc(3rem / 2);
@@ -349,15 +315,13 @@ header {
 }
 
 .header_contact-me {
-    box-shadow: none;
     border: 0.1rem solid var(--color-light);
     box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .header_contact-me:hover {
     border: 0.1rem solid var(--color-primary-variant);
-    box-shadow: 0 0.5rem 0.5rem rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 0.5rem rgba(255, 255, 255, 0.1), inset 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .header_visit,
@@ -371,33 +335,15 @@ header {
 }
 
 @keyframes myHeart {
-    0% {
-        transform: scale(0.8);
-    }
-    15% {
-        transform: scale(0.9);
-    }
-    25% {
-        transform: scale(0.8);
-    }
-    35% {
-        transform: scale(0.9);
-    }
-    50% {
-        transform: scale(1);
-    }
-    65% {
-        transform: scale(0.9);
-    }
-    75% {
-        transform: scale(0.8);
-    }
-    85% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(0.8);
-    }
+    0% {transform: scale(0.8);}
+    15% {transform: scale(0.9);}
+    25% {transform: scale(0.8);}
+    35% {transform: scale(0.9);}
+    50% {transform: scale(1);}
+    65% {transform: scale(0.9);}
+    75% {transform: scale(0.8);}
+    85% {transform: scale(0.9);}
+    100% {transform: scale(0.8);}
 }
 
 /* ====== FRAMES START ====== */
@@ -416,57 +362,29 @@ header {
     border: 0.2rem solid var(--color-white);
     box-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
     transform: rotate(-10deg);
-    /* transform-origin: bottom left; */
     transition: var(--transition);
 }
 
-.header__frame:nth-child(1) {
-    left: -5rem;
-}
+.header__frame:nth-child(1) {left: -5rem;}
+.header__frame:nth-child(2) {left: calc(-5rem + 8rem);}
+.header__frame:nth-child(3) {left: calc(-5rem + (8rem * 2));}
+.header__frame:nth-child(4) {left: calc(-5rem + (8rem * 3));}
+.header__frame:nth-child(5) {left: calc(-5rem + (8rem * 4));}
 
-.header__frame:nth-child(2) {
-    left: calc(-5rem + 8rem);
-}
-
-.header__frame:nth-child(3) {
-    left: calc(-5rem + (8rem * 2));
-}
-
-.header__frame:nth-child(4) {
-    left: calc(-5rem + (8rem * 3));
-}
-
-.header__frame:nth-child(5) {
-    left: calc(-5rem + (8rem * 4));
-}
-
-.header__frames:hover .header__frame {
-    transform: rotate(0deg);
-}
-
-.header__frames:hover .header__frame:nth-child(1) {
-    left: -5rem;
-}
-
-.header__frames:hover .header__frame:nth-child(2) {
-    left: calc(-5rem + 16rem);
-}
-
-.header__frames:hover .header__frame:nth-child(3) {
-    left: calc(-5rem + (16rem * 2));
-}
-
-.header__frames:hover .header__frame:nth-child(4) {
-    left: calc(-5rem + (16rem * 3));
-}
-
-.header__frames:hover .header__frame:nth-child(5) {
-    left: calc(-5rem + (16rem * 4));
+.header__frames:hover .header__frame {transform: rotate(0deg);}
+.header__frames:hover .header__frame:nth-child(1) {left: -5rem;}
+.header__frames:hover .header__frame:nth-child(2) {left: calc(-5rem + 16rem);}
+.header__frames:hover .header__frame:nth-child(3) {left: calc(-5rem + (16rem * 2));}
+.header__frames:hover .header__frame:nth-child(4) {left: calc(-5rem + (16rem * 3));}
+.header__frames:hover .header__frame:nth-child(5) {left: calc(-5rem + (16rem * 4));
 }
 
 /* ====== FRAMES END ====== */
 
-/* ====== BUTTON ====== */
+/* ======================= HEADER END ======================= */
+
+
+/* ======================= BUTTON START======================= */
 
 .contact__btn {
     width: 10rem;
@@ -477,24 +395,6 @@ header {
     place-items: center;
     cursor: pointer;
     transition: var(--transition);
-}
-
-.header__btn {
-    background: linear-gradient(
-        -30deg,
-        var(--color-primary-variant),
-        var(--color-primary),
-        var(--color-primary-variant)
-    );
-    position: absolute;
-    right: 15%;
-    bottom: 1rem;
-    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
-}
-
-.header__btn:hover {
-    transform: translateY(-1rem);
-    color: var(--color-bg-1);
 }
 
 .contact__btn i {
@@ -519,14 +419,13 @@ header {
 }
 
 @keyframes spinText {
-    to {
-        transform: rotate(360deg);
-    }
+    to {transform: rotate(360deg);}
 }
 
-/* ============= Header End ============= */
+/* ======================= BUTTON END ======================= */
 
-/* ============= About Start ============= */
+
+/* ======================= ABOUT START ======================= */
 
 #about {
     margin-top: 18rem;
@@ -611,10 +510,11 @@ header {
     color: var(--color-primary-variant);
     font-weight: 600;
 }
-/* ============= About End ============= */
+
+/* ======================= ABOUT END ======================= */
 
 
-/* ============= Gallery Start ============= */
+/* ======================= GALLERY START ======================= */
 
 .swiper-wrapper {
     margin-top: 3rem;
@@ -629,37 +529,24 @@ header {
 .swiper-slide img {
     height: 30rem;
     border: 0.7rem solid var(--color-white);
-    /* border-bottom: 5rem solid var(--color-white); */
     cursor:grab;
     transition: var(--transition);
-    /* filter:saturate(0); */
     user-select: none;
 }
 
 .swiper-slide img:hover {
-    /* filter:saturate(1); */
     filter: sepia(0.8);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
-}
-
-.img-right-top{
-    object-position: -18rem top;
-}
-
-.img-left-top{
-    object-position: 16rem top;
+    box-shadow: var(--box-shadow-3);
 }
 
 .swiper-pagination-bullet {
     background: var(--color-primary);
 }
 
+/* ======================= GALLERY END ======================= */
 
 
-/* ============= Gallery End ============= */
-
-
-/* ============= START CHILDREN ============= */
+/* ======================= CHILDREN START ======================= */
 
 .children__container {
     position: relative;
@@ -692,7 +579,6 @@ header {
     height: 100%;
     object-fit: cover;
     transition: all .8s;
-    
 }
 
 .children__img:hover {
@@ -702,19 +588,16 @@ header {
 
 .children__item:nth-child(1) {
     grid-column-start: span 2;
-
 }
 
 .children__item:nth-child(2) {
     grid-row-start: span 2;
-
 }
 
 .children__item:nth-child(9) {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 3;
-
 }
 
 .children__item:nth-child(8) {
@@ -722,14 +605,12 @@ header {
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 5;
-
 }
 
 .children__item:nth-child(14) {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 5;
-
 }
 
 .children__item:nth-child(16) {
@@ -737,18 +618,25 @@ header {
     grid-column-end: 5;
     grid-row-start: 5;
     grid-row-end: 7;
-
 }
 
-/* END CHILDREN */
+/* ======================= CHILDREN END ======================= */
 
 
+/* ======================= ART START ======================= */
 
-/* START ART */
 #art {
     background: var(--color-primary-variant);
+    border-top: 0.5rem solid var(--color-bg-4);
+    border-bottom: 0.5rem solid var(--color-bg-4);
+    box-shadow: var(--box-shadow-3);
+    padding-bottom: 5rem;
+    margin-top: 2rem;
 }
 
+.art__container{
+    padding-top: 8rem;
+}
 
 .art__head {
     flex-wrap: wrap;
@@ -762,8 +650,8 @@ header {
 }
 
 .art__p {
-    margin-bottom: 2rem;
     color: var(--color-bg-4);
+    margin-bottom: 4rem;
 }
 
 .art__grid {
@@ -780,8 +668,7 @@ header {
 }
 .art__grid-big-img img{
     height: 30rem;
-    /* border: 0.2rem solid var(--color-light); */
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow-3);
     transition: all ease .8s;
 }
 
@@ -792,7 +679,6 @@ header {
 .art__thumb {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     align-content:center;
     gap: 0.5rem;
     width: 50%;
@@ -805,8 +691,7 @@ header {
 .art__thumb a img {
     width: 9rem;
     height: 7rem;
-    /* border: 0.5rem solid var(--color-light); */
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow-3);
     object-fit: cover;
     transition: var(--transition);
 }
@@ -815,18 +700,13 @@ header {
     transform: scale(1.1);
 }
 
-.swiper__art,
-.swiper__children,
-.swiper__wedding {
-    display: none;
-}
-
-/* END ART */
+/* ======================= ART END ======================= */
 
 
-/* WEDDING GRID */
+/* ======================= WEDDING START ======================= */
 
 
+/*  WEDDING GRID */
 
 .wedding__grid {
     display: grid;
@@ -839,8 +719,7 @@ header {
 .wedding__item {
     overflow: hidden;
     border: 0.4rem solid var(--color-primary-variant);
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.4);
-
+    box-shadow: var(--box-shadow-3);
 }
 
 .wedding__img {
@@ -848,7 +727,6 @@ header {
     height: 100%;
     object-fit: cover;
     transition: all .8s;
-    
 }
 
 .wedding__img:hover {
@@ -868,7 +746,6 @@ header {
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
-    
 }
 
 .wedding__item:nth-child(9) {
@@ -892,25 +769,24 @@ header {
     grid-row-end: 8;
 }
 
+/* ======================= WEDDING END ======================= */
 
 
-
-
-
-/* === FORMULARIO CONTACTO === */
+/* ======================= FORM START ======================= */
 
 .contact {
     position: relative;
     min-height: 100vh;
-    padding: 0 6rem;
+    padding: 2rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: var(--color-bg-4);
     border-top: 0.2rem solid var(--color-bg-2);
+    border-bottom: 0.2rem solid var(--color-bg-2);
     box-shadow: inset 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    
+    padding-bottom: 3rem;
 }
 
 .contact .content {
@@ -922,12 +798,16 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .contact .content h2 {
     margin: 1.8rem;
     color: var(--color-white);
+}
+
+.contact .content h2 i {
+    font-size: 2.5rem;
+    margin-left: 1rem;
 }
 
 .contact .content p {
@@ -956,7 +836,6 @@ header {
     position: relative;
     padding: 1.2rem 0;
     display: flex;
-
 }
 
 .form-container .contactInfo .box .icon {
@@ -988,7 +867,6 @@ header {
     padding: 1.5rem 2.5rem;
     background: var(--color-white);
     box-shadow: 1rem 1rem 0.5rem rgba(0, 0, 0, 0.4);
-
 }
 
 .contactForm h2 {
@@ -1001,7 +879,6 @@ header {
     position: relative;
     width: 100%;
     margin-top: 0.6rem;
-
 }
 
 .contactForm .inputBox input,
@@ -1038,7 +915,6 @@ header {
     color: var(--color-bg-2);
     font-size: 0.75rem;
     transform: translateY(-20px);
-
 }
 
 .contactForm .inputBox input[type="submit"] {
@@ -1062,7 +938,8 @@ header {
     border-radius: 0.3rem;
     font-weight: 600;
     font-size: 1.1rem;
-    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow-2);
+    cursor: pointer;
 }
 
 .boton:hover {
@@ -1071,14 +948,42 @@ header {
     transition: .5s;
 }
 
-/* FIN FORM */
+/* ======================= FORM END ======================= */
+
+
+/* ======================= CREDITS START ======================= */
+
+.credits {
+    text-align: right;
+    color: var(--color-white);
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    font-weight: 400;
+
+}
+
+.credits__p a {
+    margin-left: 0.5rem;
+}
+
+.credits__img {
+    width: 1.2rem;
+    display: inline;
+    margin-left: 0.5rem;
+    transition: var(--transition);
+}
+
+.credits__img:hover {
+    transform: scale(1.8) rotate(720deg);
+}
+
+/* ======================= CREDIT END ======================= */
 
 
 
-/* ============ Medias Queries ============== */
-
+/* ======================= MEDIA QUERYS START ======================= */
     
-/* for Large Devices*/
+        /* for Large Devices*/
 
 @media screen and (max-width: 1475px) {
     .swiper__art {
@@ -1098,6 +1003,7 @@ header {
     }
 }
 
+
 @media screen and (max-width: 1420px) {
     .header__container {
         grid-template-columns: 35% 60%;
@@ -1111,7 +1017,9 @@ header {
     h1 {font-size: 3.1rem;}
 }
 
-/* for Tablets*/
+
+        /* for Tablets*/
+
 @media screen and (max-width: 1030px) {
     .container {
         width: var(--container-width-md);
@@ -1152,7 +1060,6 @@ header {
             transform: rotateX(0);
             opacity: 1;
         }
-        
     }
 
     .nav__links li a{
@@ -1163,6 +1070,11 @@ header {
         align-items: center;
         padding: 1rem 5rem 1rem 3rem;
         border-top: 1px solid var(--color-bg-2);
+    }
+
+    .nav__links li:hover > ul,
+    .nav__links li a i {
+        display: none;
     }
 
     .nav__toggle-btn {
@@ -1188,7 +1100,6 @@ header {
         place-items: center;
     }
 
-    /* Achicar el Gri-template-columns a partir de 796*/
     .header__container {
         grid-template-columns: 35% 60%;
         gap: 2%;
@@ -1202,8 +1113,6 @@ header {
     .header__right p {
         width: 95%;
     }
-
-    /* Achicar el Gri-template-columns a partir de 796*/
 
     .header__frame {
         width: 10rem;
@@ -1267,7 +1176,9 @@ header {
     .children__head,
     .art__head,
     .wedding__head,
-    .family__head {
+    .family__head,
+    .animals__head,
+    .landscape__head {
         margin-left: 2rem;
         gap: 10rem;
         width: 100%;
@@ -1277,7 +1188,9 @@ header {
     .children__p,
     .art__p,
     .wedding__p,
-    .family__p {
+    .family__p,
+    .animals__p,
+    .landscape__p {
         width: 95%;
         margin: 0 auto;
         margin-top: 2rem;
@@ -1302,7 +1215,6 @@ header {
 
     .form-container {
         flex-direction: column-reverse;
-
     }
 
     .form-container .contactInfo {
@@ -1319,6 +1231,7 @@ header {
 
 }
 
+
 @media screen and (max-width: 890px) {
     .header__frame {display: none;}
 
@@ -1332,13 +1245,17 @@ header {
     .children__empty,
     .art__empty,
     .wedding__empty, 
-    .family__empty {
+    .family__empty,
+    .animals__empty,
+    .landscape__empty {
         width: 12rem;
     }
 
 }
 
-/* for Phones*/
+
+        /* for Phones*/
+
 @media screen and (max-width: 600px) {
     .swiper__children,
     .swiper__wedding {
@@ -1359,9 +1276,7 @@ header {
         display: none;
     }
     
-    
     h1, h2 {
-        /* font-size: 2.4rem; */
         line-height: 1.3;
     }
 
@@ -1398,7 +1313,6 @@ header {
     .header_contact-me {
         display: none;
     }
-    
 
     /* ===== ABOUT =====*/
 
@@ -1430,7 +1344,9 @@ header {
     .children__head,
     .art__head,
     .wedding__head,
-    .family__head {
+    .family__head,
+    .animals__head,
+    .landscape__head {
         color: var(--color-white);
     }
 
@@ -1438,7 +1354,9 @@ header {
     .children__empty,
     .art__empty,
     .wedding__empty, 
-    .family__empty {
+    .family__empty,
+    .animals__empty,
+    .landscape__empty {
         display: none;
     }
 
@@ -1446,13 +1364,15 @@ header {
     .children__p,
     .art__p,
     .wedding__p,
-    .family__p {
+    .family__p,
+    .animals__p,
+    .landscape__p {
         width: 90%;
         text-align: center;
         color: var(--color-white);
     }
 
-    #art, #children, #wedding {
+    #art, #children, #animals, #family, #landscape {
         margin-top: 0;
     }
 
@@ -1462,21 +1382,17 @@ header {
 
 }
 
+
 @media screen and (max-width: 510px) {
     .header__right h1{
         margin: 0 2rem;
     }
 }
 
-
-
-
+/* ======= EXTRA =======*/
 
 @media only screen and (min-width: 1920px) {
     .header__container {
         margin-top: 15rem;
-        /* grid-template-columns: 45% 51%;
-        gap: 1%; */
     }
-
 }

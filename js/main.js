@@ -1,10 +1,10 @@
 
 
-// Right Clik Desactivado
+        // Right Clik Desactivado
 
 // document.oncontextmenu = function(){return false}
 
-// Change Nav Style on Scroll
+        // Change Nav Style on Scroll
 
 window.addEventListener("scroll", () => {
     document
@@ -12,7 +12,7 @@ window.addEventListener("scroll", () => {
         .classList.toggle("window-scrolled", window.scrollY > 0);
 });
 
-// Responsive NAVBAR
+        // Responsive NAVBAR
 
 const nav = document.querySelector('.nav__links');
 const openNavBtn = document.querySelector('#nav__toggle-open');
@@ -40,7 +40,7 @@ if(document.body.clientWidth < 1024) {
 })
 }
 
-//WhatsApp
+        //WhatsApp
 
 function isMobile() {
     if (sessionStorage.desktop)
@@ -78,9 +78,7 @@ formulario.addEventListener('submit', (event) => {
     }, 3000);
 });
 
-
-
-// ART
+        // ART
 
 $(document).ready(function(){
     $('.art__thumb a').click(function(e){
@@ -89,10 +87,7 @@ $(document).ready(function(){
     })
 })
 
-
-
-
-// Contact buttons (circular text buttons)
+        // Contact buttons (circular text buttons)
 
 const textButtons = document.querySelectorAll(".contact__btn");
 
@@ -109,16 +104,12 @@ textButtons.forEach((textButtons) => {
         .join("");
 });
 
-//Swipper JS
+        //Swipper JS
 var swiper = new Swiper(".mySwiper", {
     keyboard: {
         enabled: true,
         onlyInViewport: false,
     },
-
-// mousewheel: {
-// invert: true,
-// },
 
     autoplay: {
         disableOnInteraction: false,

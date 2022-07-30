@@ -102,7 +102,7 @@ img {
     width: 100%;
 }
 
-#gallery, #wedding, #art, #children, #family, #animals {
+#gallery, #wedding, #art, #children, #family, #animals, #landscape, #testimonial {
     padding-top: 10rem;
 }
 
@@ -130,10 +130,6 @@ img {
     margin-left: 8rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-}
-
-#wedding, #art, #children, #gallery, #family, #animals, #landscape {
-    padding-bottom: 4rem;
 }
 
 .swiper__art,
@@ -557,6 +553,11 @@ header {
 
 /* ======================= CHILDREN START ======================= */
 
+#children {
+    padding-bottom: 8rem;
+}
+
+
 .children__container {
     position: relative;
 }
@@ -956,6 +957,96 @@ header {
 /* ======================= ANIMALS END ======================= */
 
 
+/* ======================= TESTIMONIAL START ======================= */
+
+#testimonial {
+    overflow: hidden;
+    padding-top: 6rem;
+}
+
+.testimonial__head {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.swiper-testimonial {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    height: 15rem;
+
+}
+
+.swiper-slide2 {
+    background: var(--color-bg-4);
+    background-position: center;
+    background-size: cover;
+    width: 20rem;
+    height: 25rem;
+    filter: blur(0.2rem);
+}
+
+.swiper-slide-active {
+    filter: none;
+    border: 0.3rem solid var(--color-primary-variant);
+}
+
+.testimonial__box {
+    position: relative;
+    width: 100%;
+    padding: 2.5rem;
+    padding-top: 4rem;
+
+}
+
+.testimonial__box .fa-quote-right {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+.testimonial__box .testimonial__box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+.testimonial__box .testimonial__details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    border: none;
+}
+
+.swiper-slide2 .testimonial__img-box {
+    position: relative;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.9rem;
+}
+
+.swiper-slide2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+.swiper-slide2 img:hover {
+    filter: sepia(0);
+}
+
+
+  /* ======================= TESTIMONIAL END ======================= */
 
 /* ======================= FORM START ======================= */
 

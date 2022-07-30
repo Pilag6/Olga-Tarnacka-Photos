@@ -111,7 +111,7 @@ textButtons.forEach((textButtons) => {
         .join("");
 });
 
-        //Swipper JS
+        //Swiper JS
 var swiper = new Swiper(".mySwiper", {
     keyboard: {
         enabled: true,
@@ -160,7 +160,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-// Swipper JS Family
+// Swiper JS Family
 
 var swiper1 = new Swiper(".mySwiper1", {
     autoplay: {
@@ -185,6 +185,33 @@ var swiper1 = new Swiper(".mySwiper1", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+
+    // Enable debugger
+    debugger: true,
+
+});
+
+// Swiper JS Testimonial
+
+var swiper2 = new Swiper(".mySwiper2", {
+    effect: 'coverflow',
+    grabCursor: true, 
+    centeredSlides: true,
+    coverflowEffect: {
+        rotate: 0,
+        strech: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true,
+    },
+    
+    autoplay: {
+        disableOnInteraction: false,
+        delay: 4000,
+    },
+
+    slidesPerView: 'auto',
+    loop: true,
 
     // Enable debugger
     debugger: true,

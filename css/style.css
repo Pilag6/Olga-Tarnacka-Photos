@@ -985,7 +985,7 @@ header {
     filter: blur(0.2rem);
 }
 
-.swiper-slide-active {
+.swiper__testimonial .swiper-slide-active {
     filter: none;
     border: 0.3rem solid var(--color-primary-variant);
 }

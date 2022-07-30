@@ -102,8 +102,8 @@ img {
     width: 100%;
 }
 
-#gallery, #children, #art, #wedding, #animals, #landscape {
-    margin-top: 8rem;
+#gallery, #wedding, #art, #children, #family, #animals {
+    padding-top: 10rem;
 }
 
 .gallery__head, 
@@ -138,7 +138,8 @@ img {
 
 .swiper__art,
 .swiper__children,
-.swiper__wedding {
+.swiper__wedding,
+.swiper__animals {
     display: none;
 }
 
@@ -175,7 +176,15 @@ nav {
 }
 
 /* ===== Only need on tablets and phones ===== */
-.nav__toggle-btn {display: none;}
+.nav__toggle-btn {
+    display: none;
+    font-size: 2rem;
+    padding: 0.2rem 0.5rem;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-white);
+    border-width: 0;
+}
 /* ===== Only need on tablets and phones ===== */
 
 .nav__logo {
@@ -631,11 +640,6 @@ header {
     border-bottom: 0.5rem solid var(--color-bg-4);
     box-shadow: var(--box-shadow-3);
     padding-bottom: 5rem;
-    margin-top: 2rem;
-}
-
-.art__container{
-    padding-top: 8rem;
 }
 
 .art__head {
@@ -770,6 +774,187 @@ header {
 }
 
 /* ======================= WEDDING END ======================= */
+
+
+/* ======================= FAMILY START ======================= */
+
+.swiper-wrapper1 {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    height: 37rem;
+}
+
+.swiper-slide1 {
+    max-height: 37rem;
+}
+
+.swiper-slide1 img {
+    height: 37rem;
+    border: 0.7rem solid var(--color-white);
+    cursor:grab;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.swiper-slide1 img:hover {
+    filter: grayscale(1);
+}
+
+.swiper1 .swiper-pagination-bullet {
+    background: var(--color-light);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    top: 39rem
+}
+
+.swiper-button-next i,
+.swiper-button-prev i {
+    color: var(--color-bg-1);
+}
+
+/*  FAMILY GRID */
+
+.family__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 350px;
+    padding: 40px 20px 60px;
+    gap: 10px;
+}
+
+.family__item {
+    overflow: hidden;
+    border: 0.4rem solid var(--color-primary-variant);
+    box-shadow: var(--box-shadow-3);
+}
+
+.family__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .8s;
+}
+
+.family__img:hover {
+    transform: scale(1.3);
+    opacity: .8;
+}
+
+.family__item:nth-child(10) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.family__item:nth-child(3) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.family__item:nth-child(9) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.family__item:nth-child(8) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.family__item:nth-child(13) {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 8;
+}
+
+/* ======================= FAMILY END ======================= */
+
+
+/* ======================= ANIMALS START ======================= */
+
+#animals {
+    background: var(--color-light);
+    border-top: 0.5rem solid var(--color-bg-4);
+    border-bottom: 0.5rem solid var(--color-bg-4);
+    box-shadow: var(--box-shadow-3);
+    padding-bottom: 5rem;
+}
+
+.animals__head {
+    flex-wrap: wrap;
+    color: var(--color-white);
+}
+
+.animals__empty {
+    background: var(--color-light);
+    box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-light);
+}
+
+.animals__p {
+    color: var(--color-white);
+}
+
+
+
+/*  WEDDING GRID */
+
+.animals__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 350px;
+    padding: 40px 20px 60px;
+    gap: 10px;
+}
+
+.animals__item {
+    overflow: hidden;
+    border: 0.4rem solid var(--color-bg-4);
+    box-shadow: var(--box-shadow-3);
+}
+
+.animals__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .8s;
+}
+
+.animals__img:hover {
+    transform: scale(1.3);
+    opacity: .8;
+}
+
+.animals__item:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.animals__item:nth-child(13) {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+
+
+/* ======================= ANIMALS END ======================= */
+
 
 
 /* ======================= FORM START ======================= */
@@ -954,7 +1139,6 @@ header {
 /* ======================= CREDITS START ======================= */
 
 .credits {
-    text-align: right;
     color: var(--color-white);
     font-size: 1rem;
     padding: 1rem 3rem;
@@ -994,7 +1178,7 @@ header {
         justify-content: center;
     }
 
-    .swiper-pagination-art .swiper-pagination-bullet {
+    .swiper-pagination-art .swiper-pagination-bullet{
         background: var(--color-bg-4);
     }
 
@@ -1028,6 +1212,10 @@ header {
     
     h1 {font-size: 2.8rem;}
     h2 {font-size: 2.8rem;}
+
+    #gallery, #wedding, #art, #children, #family, #animals {
+        padding-top: 6rem;
+    }
 
     /* ======= NAVBAR ======= */
 
@@ -1079,12 +1267,7 @@ header {
 
     .nav__toggle-btn {
         display: inline-block;
-        font-size: 2rem;
-        padding: 0.2rem 0.5rem;
-        background: transparent;
-        cursor: pointer;
-        color: var(--color-white);
-        border-width: 0;
+        
     }
 
     #nav__toggle-close {display: none;}
@@ -1248,7 +1431,7 @@ header {
     .family__empty,
     .animals__empty,
     .landscape__empty {
-        width: 12rem;
+        display: none;
     }
 
 }
@@ -1258,12 +1441,14 @@ header {
 
 @media screen and (max-width: 600px) {
     .swiper__children,
-    .swiper__wedding {
+    .swiper__wedding,
+    .swiper__animals {
         display: flex;
     }
 
     .swiper-pagination-wedding, 
-    .swiper-pagination-kids {
+    .swiper-pagination-kids,
+    .swiper-pagination-animals {
         justify-content: center;
     }
 
@@ -1271,8 +1456,13 @@ header {
         background: var(--color-light);
     }
 
+    .swiper-pagination-animals .swiper-pagination-bullet {
+        background: var(--color-bg-4);
+    }
+
     .hidden-in-sd-kids,
-    .hidden-in-sd-wedding {
+    .hidden-in-sd-wedding,
+    .hidden-in-sd-animals {
         display: none;
     }
     
@@ -1350,16 +1540,6 @@ header {
         color: var(--color-white);
     }
 
-    .gallery__empty,
-    .children__empty,
-    .art__empty,
-    .wedding__empty, 
-    .family__empty,
-    .animals__empty,
-    .landscape__empty {
-        display: none;
-    }
-
     .gallery__p,
     .children__p,
     .art__p,
@@ -1394,5 +1574,18 @@ header {
 @media only screen and (min-width: 1920px) {
     .header__container {
         margin-top: 15rem;
+    }
+
+    .swiper-wrapper1 {
+        height: 50rem;
+    }
+    
+    .swiper-slide1 {
+        max-height: 50rem;
+    }
+    
+    .swiper-slide1 img {
+        height: 50rem;
+
     }
 }

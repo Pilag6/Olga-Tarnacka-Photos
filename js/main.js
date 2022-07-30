@@ -87,6 +87,13 @@ $(document).ready(function(){
     })
 })
 
+$(document).ready(function(){
+    $('.animals__thumb a').click(function(e){
+        e.preventDefault();
+        $('.animals__grid-big-img img').attr("src", $(this).attr("href"))
+    })
+})
+
         // Contact buttons (circular text buttons)
 
 const textButtons = document.querySelectorAll(".contact__btn");
@@ -149,6 +156,42 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
+
+
+
+
+// Swipper JS Family
+
+var swiper1 = new Swiper(".mySwiper1", {
+    autoplay: {
+        disableOnInteraction: false,
+        delay: 3500,
+    },
+
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+
+    // observer: true,
+    // observeParents: true,
+    // parallax:true,
+
+    pagination: {
+        el: ".swiper-pagination1",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    // Enable debugger
+    debugger: true,
+
+});
+
+swiper1.autoplay.start();
 
 swiper.autoplay.start();
 

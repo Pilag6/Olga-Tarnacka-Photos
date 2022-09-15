@@ -218,9 +218,9 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 });
 
-swiper1.autoplay.start();
+// swiper1.autoplay.start();
 
-swiper.autoplay.start();
+// swiper.autoplay.start();
 
 
 
